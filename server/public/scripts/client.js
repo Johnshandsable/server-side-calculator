@@ -19,8 +19,27 @@ function onSubmit(event) {
   console.log('x, ', x);
   console.log('y, ', y);
 
-  // let operation = $(this).data('operation');
-}
+  let operationData = {
+    x: x,
+    y: y,
+    operation: operation,
+  };
+
+  // PUSHING DATA TO POST
+  $.ajax({
+    url: '/logoperations',
+    method: 'POST', // POST METHOD
+    data: {
+      data_to_add: operationData,
+    },
+  })
+    .then(function (response) {
+      console.log('A response ocurred: ', response);
+    })
+    .catch(function (error) {
+      console.log('An error ocurred: ', error);
+    });
+} // end onSubmit
 
 function setOperation(event) {
   event.preventDefault(); // prevent page from refreshing
