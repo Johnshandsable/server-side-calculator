@@ -11,11 +11,11 @@
   <body>
     <form>
       <input id="xInput" type="text" placeholder="x" />
-      <button class="operationButton">+</button>
-      <button class="operationButton">-</button>
-      <button class="operationButton">*</button>
-      <button class="operationButton">/</button>
-      <button class="operationButton">C</button>
+      <button data-operation="+" class="operationButton">+</button>
+      <button data-operation="-" class="operationButton">-</button>
+      <button data-operation="*" class="operationButton">*</button>
+      <button data-operation="/" class="operationButton">/</button>
+      <button id="clearButton" class="operationButton">C</button>
       <input id="yInput" type="text" placeholder="y" />
       <button id="submitOperation">Calculate</button>
     </form>
