@@ -5,6 +5,7 @@ const app = express();
 const PORT = 5000;
 
 // module imports
+const operations = require('./modules/mathoperations');
 
 app.use(express.static('server/public'));
 
@@ -21,13 +22,13 @@ app.listen(PORT, function () {
   // ..and try again
 });
 
-// GET endpoint for /tournaments
-app.get('/tournaments', (req, res) => {
-  res.send(tournamentsArray);
-});
-
-// POST endpoint for /players
-app.post('/players', (req, res) => {
-  let newPlayer = req.body.player_to_add;
+// GET endpoint
+app.get('/logoperations', (req, res) => {
+  console.log(operations.add(7, 10)); // 17
+  console.log(operations.subtract(7, 10)); // -3
+  console.log(operations.multiply(7, 10)); // 70
+  console.log(operations.divide(7, 10)); // 0.7
   res.sendStatus(200);
 });
+
+// POST endpoint
