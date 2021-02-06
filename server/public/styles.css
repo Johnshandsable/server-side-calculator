@@ -1,0 +1,61 @@
+body {
+  background-color: #ecf0f1;
+  font-size: 25px;
+}
+
+form {
+  width: 50%;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  font-size: 25px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+/* Classes */
+.flexContainer {
+  align-items: row;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.operationButton {
+  background-color: #e74c3c;
+  border: 3px solid black;
+  border-radius: 50%;
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
+}
+
+.operationsButtonContainer {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+/* IDs */
+#submitOperation,
+#clearButton {
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: #2ecc71;
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
+}

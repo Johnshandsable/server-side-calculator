@@ -6,30 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./scripts/client.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Server-Side Calculator</title>
   </head>
   <body>
-    <form>
-      <input id="xInput" type="text" placeholder="x" />
-      <button data-operation="add" class="operationButton">+</button>
-      <button data-operation="subtract" class="operationButton">-</button>
-      <button data-operation="multiply" class="operationButton">*</button>
-      <button data-operation="divide" class="operationButton">/</button>
-      <button id="clearButton" class="operationButton">C</button>
-      <input id="yInput" type="text" placeholder="y" />
-      <button id="submitOperation">Calculate</button>
-    </form>
+    <h1>Calc.</h1>
+    <div class="flexContainer">
+      <form>
+        <input id="xInput" type="text" placeholder="x" />
+        <input id="yInput" type="text" placeholder="y" />
 
-    <table>
-      <thead>
-        <tr>
-          <th>X</th>
-          <th>Operation</th>
-          <th>Y</th>
-          <th>Result</th>
-        </tr>
-      </thead>
-      <tbody id="historyTableBody"></tbody>
-    </table>
+        <!-- Holds the Operation Buttons -->
+        <div class="operationsButtonContainer">
+          <button data-operation="add" class="operationButton">+</button>
+          <button data-operation="subtract" class="operationButton">-</button>
+          <button data-operation="multiply" class="operationButton">*</button>
+          <button data-operation="divide" class="operationButton">/</button>
+          <button id="clearButton" class="operationButton">C</button>
+          <button id="submitOperation">=</button>
+        </div>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>X</th>
+            <th>Operation</th>
+            <th>Y</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody id="historyTableBody"></tbody>
+      </table>
+    </div>
   </body>
 </html>
