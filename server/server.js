@@ -44,13 +44,13 @@ app.post('/logoperations', (req, res) => {
   let numY = Number(operationData.y);
   let result = '';
 
-  if (operationData.operation === 'add') {
+  if (operationData.operation === '+') {
     console.log(`${numX} + ${numY}`);
     result = operations.add(numX, numY);
-  } else if (operationData.operation === 'subtract') {
+  } else if (operationData.operation === '-') {
     console.log(`${numX} - ${numY}`);
     result = operations.subtract(numX, numY);
-  } else if (operationData.operation === 'multiply') {
+  } else if (operationData.operation === '*') {
     console.log(`${numX} * ${numY}`);
     result = operations.multiply(numX, numY);
   } else {

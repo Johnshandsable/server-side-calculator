@@ -10,10 +10,6 @@ You are going to be building a server-side calculator. The logic for the calcula
 
 Create a user interface where the user can input two values (2 input elements) and the select type of mathematical operation. When the submit (`=` button) is clicked, capture this input, bundle it up in an object, and send this object to the server via a POST. There should also be a 'C' button that will clear the user input fields.
 
-[x] - Create two inputs for values
-[x] - Create inputs for each type of mathematical operation
-[x] - Create a 'C' button to clear inputs
-
 Build out the server-side logic to compute the numbers as appropriate. The server should be able to handle Addition, Subtraction, Multiplication, and Division. Once the calculation is complete, send back the OK. You should do a GET request after the POST to get the actual calculation.
 
 ### History
@@ -27,6 +23,20 @@ Keep a historical record of all math operations and solutions on the server. Dis
 ## ![base mode interface](images/baseMode.png)
 
 > Note: Do not use eval() to complete this assignment.
+
+[x] - Create two inputs for values
+[x] - Create inputs for each type of mathematical operation
+[x] - Create a 'C' button to clear inputs
+[] - Get rid of the input fields and replace with buttons for each number
+[] - Create a function which rounds inside the modules and returns the rounded num
+[] - Display what the user clicks in a new function onto an input-type field
+[] - Handle user not sending correct inputs
+[] - Show an alert if user didn't send correct inputs
+[] - Display the entire expression like '99.9 + 54.3'
+[] - Create a delete history button which allows the user to clear their history
+[] - Create a delete request to the server in order to delete actual history
+[] - Create a button with the history which allows the user to run said calculation
+again and display it on the calculator
 
 ## Stretch Goals
 
