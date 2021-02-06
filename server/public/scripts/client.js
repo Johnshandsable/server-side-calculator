@@ -4,11 +4,26 @@ $(document).ready(function () {
   console.log('jQuery loaded');
   // EVENT HANDLERS
   $(document).on('click', '#submitOperation', onSubmit);
+  $(document).on('click', '.numberButton', setNumber);
   $(document).on('click', '.operationButton', setOperation);
   $(document).on('click', '#clearButton', clearEntries);
 });
 
 let operation = ''; // holds the operation
+let x = '';
+let y = '';
+
+function setNumber(event) {
+  event.preventDefault();
+  console.log('setting number');
+  if (!operation) {
+    x += $(this).data('number');
+    $('#expressionContainer').val(`${x}`);
+  } else {
+    y += $(this).data('number');
+    $('#expressionContainer').val(`${y}`);
+  }
+}
 
 function getHistoryData() {
   /*
@@ -71,14 +86,17 @@ function onSubmit(event) {
   event.preventDefault(); // prevent page from refreshing
   console.log('in onSubmit() ');
 
-  let x = $('#xInput').val();
-  let y = $('#yInput').val();
+  // LEGACY CODE FROM BASE MODE
+  // let x = $('#xInput').val();
+  // let y = $('#yInput').val();
+
   console.log('x, ', x);
   console.log('y, ', y);
 
   let operationData = {
-    x: x,
-    y: y,
+    // Currently come in as strings, but need to be converted to numbers
+    x: Number(x),
+    y: Number(y),
     operation: operation,
   };
 
@@ -108,6 +126,9 @@ function setOperation(event) {
 
 function clearEntries() {
   console.log('in clearEntries() ');
-  $('#xInput').val('');
-  $('#yInput').val('');
+  // $('#xInput').val('');
+  // $('#yInput').val('');
+  x = '';
+  y = '';
+  $('#expressionContainer').val('');
 }

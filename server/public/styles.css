@@ -4,7 +4,7 @@ body {
 }
 
 form {
-  border: 2px solid grey;
+  display: flex;
   width: 50%;
 }
 
@@ -51,9 +51,43 @@ th {
   width: 50px;
 }
 
+.numberButton {
+  background-color: #95a5a6;
+  border: 3px solid black;
+  font-size: 25px;
+  margin: 5px;
+  height: 50px;
+  width: 50px;
+}
+/* Containers */
 .operationsButtonContainer {
-  display: inline-flex;
-  flex-direction: column;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-self: space-around;
+  /* justify-content: flex-end; */
+  width: 40%;
+}
+
+.numberButtonContainer {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 50%;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.inputContainer {
+  border-radius: 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 10%;
+  margin-left: 10%;
+  width: 30%;
 }
 
 /* IDs */
@@ -66,4 +100,10 @@ th {
   height: 50px;
   margin: 5px;
   width: 50px;
+}
+
+#expressionContainer {
+  border: 5px solid grey;
+  border-radius: 10%;
+  width: 100%;
 }

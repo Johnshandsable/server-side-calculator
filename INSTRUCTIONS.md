@@ -27,8 +27,8 @@ Keep a historical record of all math operations and solutions on the server. Dis
 [x] - Create two inputs for values
 [x] - Create inputs for each type of mathematical operation
 [x] - Create a 'C' button to clear inputs
-[] - Get rid of the input fields and replace with buttons for each number
-[] - Create a function which rounds inside the modules and returns the rounded num
+[x] - Get rid of the input fields and replace with buttons for each number
+[x] - Create a function which rounds inside the modules and returns the rounded num
 [] - Display what the user clicks in a new function onto an input-type field
 [] - Handle user not sending correct inputs
 [] - Show an alert if user didn't send correct inputs
