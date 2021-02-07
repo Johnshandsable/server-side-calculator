@@ -29,7 +29,7 @@ Keep a historical record of all math operations and solutions on the server. Dis
 [x] - Create a 'C' button to clear inputs
 [x] - Get rid of the input fields and replace with buttons for each number
 [x] - Create a function which rounds inside the modules and returns the rounded num
-[] - Display what the user clicks in a new function onto an input-type field
+[x] - Display what the user clicks in a new function onto an input-type field
 [] - Handle user not sending correct inputs
 [] - Show an alert if user didn't send correct inputs
 [] - Display the entire expression like '99.9 + 54.3'

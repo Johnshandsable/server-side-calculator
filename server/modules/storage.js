@@ -12,7 +12,7 @@ function getStoredResults() {
 }
 
 function clearStoredResults() {
-  storedResults = [];
+  storedResults.length = 0;
   return true;
 }
 

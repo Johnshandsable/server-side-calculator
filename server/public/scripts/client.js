@@ -7,6 +7,7 @@ $(document).ready(function () {
   $(document).on('click', '.numberButton', setNumber);
   $(document).on('click', '.operationButton', setOperation);
   $(document).on('click', '#clearButton', clearEntries);
+  $(document).on('click', '#clearHistoryButton', clearHistory);
 });
 
 let operation = ''; // holds the operation
@@ -15,7 +16,7 @@ let y = '';
 
 function setNumber(event) {
   event.preventDefault();
-  console.log('setting number');
+  console.log('in setNumber() ');
   /*
     This function concatenates a string up to X up to the point of having an operator. 
     If we have an operator we concatenate to Y until the onSubmit button is clicked. 
@@ -34,6 +35,7 @@ function getHistoryData() {
   /*
     Makes a GET request to /logoperations to receive response and then call renderToDom
   */
+  console.log('getting history data');
   $.ajax({
     url: '/logoperations',
     method: 'GET', // GET METHOD
@@ -47,21 +49,41 @@ function getHistoryData() {
     });
 }
 
-function renderToDom(historyData) {
+function clearHistory(event) {
+  event.preventDefault();
+  console.log('in clearHistory() ');
+
+  $.ajax({
+    url: '/deletehistory',
+    method: 'POST', // POST METHOD
+  })
+    .then(function (response) {
+      console.log('A POST response ocurred: ', response);
+    })
+    .catch(function (error) {
+      console.log('An error ocurred: ', error);
+    });
+  renderToDom();
+}
+
+function renderToDom(historyData = []) {
   /*
     Renders all dynamic elements like history of user inputs to DOM
   */
-  console.log('rendering to DOM');
+  console.log('in renderToDom() ');
   console.log(historyData);
 
   $('#historyTableBody').empty();
   $('#expressionContainer').empty();
 
   // renders each object within the array
-  for (let i = 0; i < historyData.length; i++) {
-    let history = historyData[i];
-    console.log(history);
-    /*
+  if (historyData.length === 0) {
+    console.log('historyData does not exist yet');
+  } else {
+    for (let i = 0; i < historyData.length; i++) {
+      let history = historyData[i];
+      console.log(history);
+      /*
       historyData OBJECT should look like 
       {
         x: 
@@ -70,7 +92,7 @@ function renderToDom(historyData) {
         result:
       }
   */
-    $('#historyTableBody').append(`
+      $('#historyTableBody').append(`
               <tr>
                   <td>${history.x}</td>
                   <td>${history.operation}</td>
@@ -78,14 +100,15 @@ function renderToDom(historyData) {
                   <td>${history.result}</td>
               </tr>
           `);
+    } // end for loop
+    // Place the last historyData value into the input
+    $('#expressionContainer').val(
+      `${historyData[historyData.length - 1].result}`
+    );
+    // Set X to the result, TODO - find a better place to put this
+    x = historyData[historyData.length - 1].result;
+    y = '';
   }
-  // Place the last historyData value into the input
-  $('#expressionContainer').val(
-    `${historyData[historyData.length - 1].result}`
-  );
-  // Set X to the result, TODO - find a better place to put this
-  x = historyData[historyData.length - 1].result;
-  y = '';
 } // end renderToDom
 
 // BUTTON EVENTS

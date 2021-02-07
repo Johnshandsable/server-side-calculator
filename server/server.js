@@ -86,3 +86,10 @@ app.post('/logoperations', (req, res) => {
   // RETURN THE RESPONSE
   res.sendStatus(200);
 });
+
+app.post('/deletehistory', (req, res) => {
+  console.log('deleting something');
+  results.clearStoredResults();
+  console.log(results.getStoredResults());
+  res.sendStatus(200);
+});
