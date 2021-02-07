@@ -85,6 +85,7 @@ function renderToDom(historyData) {
   );
   // Set X to the result, TODO - find a better place to put this
   x = historyData[historyData.length - 1].result;
+  y = '';
 } // end renderToDom
 
 // BUTTON EVENTS
