@@ -93,7 +93,6 @@ th {
 }
 
 /* IDs */
-#submitOperation,
 #clearButton {
   border: 2px solid black;
   border-radius: 4px;
@@ -101,7 +100,17 @@ th {
   font-size: 25px;
   height: 50px;
   margin: 5px;
-  width: 50px;
+  width: 105px;
+}
+
+#submitOperation {
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: #1abc9c;
+  font-size: 25px;
+  height: 50px;
+  margin: 5px;
+  width: 165px;
 }
 
 #expressionContainer {
