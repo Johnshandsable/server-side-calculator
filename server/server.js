@@ -44,6 +44,10 @@ app.post('/logoperations', (req, res) => {
   let numY = Number(operationData.y);
   let result = '';
 
+  /*
+    The below code can be a little daunting. Keep in mind that we're checking the 
+    operations individually but there may be a better way. TODO - Find a better way
+  */
   if (operationData.operation === '+') {
     console.log(`${numX} + ${numY}`);
     result = operations.add(numX, numY);
@@ -53,10 +57,17 @@ app.post('/logoperations', (req, res) => {
   } else if (operationData.operation === '*') {
     console.log(`${numX} * ${numY}`);
     result = operations.multiply(numX, numY);
-  } else {
+  } else if (operationData.operation === '/') {
     console.log(`${numX} / ${numY}`);
     result = operations.divide(numX, numY);
+  } else if (operationData.operation === '%') {
+    console.log(`${numX} * ${numY} / 100`);
+    result = operations.percentage(numX, numY);
+  } else if (operationData.operation === '//') {
+    console.log(`${numX} % ${numY}`);
+    result = operations.modulo(numX, numY);
   }
+
   console.log(`result is: ${result}`);
 
   console.log('storing results');

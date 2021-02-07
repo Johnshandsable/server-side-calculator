@@ -16,6 +16,11 @@ let y = '';
 function setNumber(event) {
   event.preventDefault();
   console.log('setting number');
+  /*
+    This function concatenates a string up to X up to the point of having an operator. 
+    If we have an operator we concatenate to Y until the onSubmit button is clicked. 
+    This functions like an old school calculator. 
+  */
   if (!operation) {
     x += $(this).data('number');
     $('#expressionContainer').val(`${x}`);
@@ -50,6 +55,7 @@ function renderToDom(historyData) {
   console.log(historyData);
 
   $('#historyTableBody').empty();
+  $('#expressionContainer').empty();
 
   // renders each object within the array
   for (let i = 0; i < historyData.length; i++) {
@@ -63,9 +69,7 @@ function renderToDom(historyData) {
         operation: 
         result:
       }
-  */ console.log(
-      $('#historyTableBody')
-    );
+  */
     $('#historyTableBody').append(`
               <tr>
                   <td>${history.x}</td>
@@ -75,6 +79,12 @@ function renderToDom(historyData) {
               </tr>
           `);
   }
+  // Place the last historyData value into the input
+  $('#expressionContainer').val(
+    `${historyData[historyData.length - 1].result}`
+  );
+  // Set X to the result, TODO - find a better place to put this
+  x = historyData[historyData.length - 1].result;
 } // end renderToDom
 
 // BUTTON EVENTS
@@ -122,13 +132,14 @@ function setOperation(event) {
   console.log('in setOperation() ');
   console.log($(this).data('operation'));
   operation = $(this).data('operation');
-}
+} // end setOperation
 
 function clearEntries() {
   console.log('in clearEntries() ');
+  // LEGACY CODE
   // $('#xInput').val('');
   // $('#yInput').val('');
   x = '';
   y = '';
   $('#expressionContainer').val('');
-}
+} // end clearEntries
