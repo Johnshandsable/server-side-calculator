@@ -9,6 +9,7 @@ form {
 }
 
 h1 {
+  color: #2ecc71;
   text-align: center;
 }
 
@@ -38,7 +39,7 @@ th {
   align-items: row;
   display: flex;
   width: 80%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .operationButton {
@@ -59,6 +60,7 @@ th {
   height: 50px;
   width: 50px;
 }
+
 /* Containers */
 .operationsButtonContainer {
   align-self: flex-start;
@@ -105,5 +107,10 @@ th {
 #expressionContainer {
   border: 5px solid grey;
   border-radius: 10%;
+  text-align: right;
   width: 100%;
+}
+
+#zeroButton {
+  width: 115px;
 }

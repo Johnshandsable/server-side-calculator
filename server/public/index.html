@@ -13,7 +13,7 @@
     <h1>Calc.</h1>
 
     <div class="inputContainer">
-      <input id="expressionContainer" />
+      <input id="expressionContainer" placeholder="0" />
     </div>
 
     <div class="flexContainer">
@@ -32,6 +32,10 @@
           <button data-number="7" class="numberButton">7</button>
           <button data-number="8" class="numberButton">8</button>
           <button data-number="9" class="numberButton">9</button>
+          <button id="zeroButton" data-number="0" class="numberButton">
+            0
+          </button>
+          <button data-number="." class="numberButton">.</button>
         </div>
         <!-- End numberButtonContainer-->
 
@@ -41,6 +45,7 @@
           <button data-operation="-" class="operationButton">-</button>
           <button data-operation="*" class="operationButton">*</button>
           <button data-operation="/" class="operationButton">/</button>
+          <button data-operation="//" class="operationButton">//</button>
           <button data-operation="%" class="operationButton">%</button>
           <button id="clearHistory" class="operationButton">H</button>
           <button id="clearButton" class="operationButton">C</button>
@@ -49,6 +54,7 @@
         <!-- End operationsButtonContainer -->
       </form>
 
+      <!-- Start of Table -->
       <table>
         <thead>
           <tr>
@@ -60,6 +66,7 @@
         </thead>
         <tbody id="historyTableBody"></tbody>
       </table>
+      <!-- End of Table -->
     </div>
   </body>
 </html>

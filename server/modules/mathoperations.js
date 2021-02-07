@@ -1,10 +1,10 @@
 function add(x, y) {
-  const result = x + y;
+  const result = round(x + y);
   return result;
 }
 
 function subtract(x, y) {
-  const result = x - y;
+  const result = round(x - y);
   return result;
 }
 
@@ -14,7 +14,17 @@ function divide(x, y) {
 }
 
 function multiply(x, y) {
-  const result = x * y;
+  const result = round(x * y);
+  return result;
+}
+
+function percentage(x, y) {
+  const result = round((x * y) / 100);
+  return result;
+}
+
+function modulo(x, y) {
+  const result = x % y;
   return result;
 }
 
@@ -25,4 +35,4 @@ function round(number) {
   return Number(number.toFixed(2));
 }
 
-module.exports = { add, subtract, divide, multiply };
+module.exports = { add, subtract, divide, multiply, percentage, modulo };
