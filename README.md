@@ -12,9 +12,9 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 ## Prerequisites
 
-[Node.js link] (https://nodejs.org/en/)
+[Node.js](https://nodejs.org/en/)
 
-[jQuery link] (https://jquery.com/)
+[jQuery](https://jquery.com/)
 
 ## Installation
 
