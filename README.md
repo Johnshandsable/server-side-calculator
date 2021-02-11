@@ -4,8 +4,6 @@
 
 This project is a server-side calculator built using Javascript, jQuery, HTML, some CSS, and a Node Server. This project features a calculator where a user can input values — x and y and then select which operation to run (addition, subtraction, etc.). After doing some server-side calculations, the response is rendered on the DOM and displays a history of the user's calculations.
 
-All issues are currently, as of 02/07/2021, not solved. Issues remaining are needing to validate user inputs, updating the UI, and adding features.
-
 ## Prerequisites
 
 [Node.js](https://nodejs.org/en/)
